@@ -1,0 +1,41 @@
+@import '../../../assets/sass/colors.scss';
+@import '../../../assets/sass/flexbox';
+
+.main {
+    background-color: $new-background;
+    min-height: 900px;
+    padding-top: 100px;
+    @include flexbox();
+    @include flex-direction(column);
+
+    .content {
+        padding: 10px 0 0 10px;
+        background-color: $new-background;
+        color: white;
+    }
+
+    #menu-btn > * {
+        margin: 10px 0 0 10px;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-top: 50px;
+        @include flex-direction(row);
+
+        #menu-btn {
+           display: none;
+        }
+        .aside-l {
+            @include flex(2);
+            display: inherit;
+        }
+
+        .content {
+            @include flex(5);
+        }
+    }
+}

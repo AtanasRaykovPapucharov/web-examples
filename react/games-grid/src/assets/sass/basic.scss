@@ -1,0 +1,36 @@
+@import './flexbox';
+
+.container {
+    @include flexbox;
+    @include flex-direction(column);
+}
+
+.flex-item-1 {
+    @include flex(1);
+}
+
+.flex-item-2 {
+    @include flex(2);
+}
+
+.flex-item-3 {
+    @include flex(3);
+}
+
+.flex-item-4 {
+    @include flex(4);
+}
+
+.flex-item-5 {
+    @include flex(5);
+}
+
+.flex-item-6 {
+    @include flex(6);
+}
+
+@media (min-width: 340px) {
+    .container {
+        @include flex-direction(row);
+    }
+}

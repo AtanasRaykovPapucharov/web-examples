@@ -1,0 +1,16 @@
+import React, { Component } from 'react';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Spinner.scss';
+
+class Spinner extends Component {
+    render() {
+        return (
+        <div id="spinner">
+            <FontAwesomeIcon className="ico fa-spin" icon={faSpinner} />
+        </div>
+        )
+    }
+}
+
+export default Spinner;
