@@ -31,7 +31,7 @@ class ActiveItemView extends Component {
                     {!this.state.gameIsLoaded ? <Spinner /> : <div>{this.props.game.name}</div>}
                 </main>
                 <section className="game-description flex-item-1">
-                    <img src={this.props.game.thumb} alt="Game Img"/>
+                    <img src={this.props.game.thumb} alt="Game Img" width="90%"/>
                     <h2>{this.props.game.name}</h2>
                     <p>{this.props.game.description}</p>
                 </section>

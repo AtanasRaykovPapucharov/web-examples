@@ -25,7 +25,7 @@ class GridView extends Component {
             return <article key={i} className="small-games">
                         <Link to={"/" + game.name}>
                             <img src={game.thumb} alt="game" width="100%"/>
-                            <span>{game.name}</span>
+                            {window.innerWidth < 260 ? <span>{game.name.slice(0, 13)}</span> : window.innerWidth > 768 ? <span>{game.name.slice(0, 23)}</span> : <span>{game.name.slice(0, 14)}</span>}
                         </Link>
                     </article>
         })

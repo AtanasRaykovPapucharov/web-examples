@@ -8,6 +8,8 @@ class Spinner extends Component {
         return (
         <div id="spinner">
             <FontAwesomeIcon className="ico fa-spin" icon={faSpinner} />
+            <div className="info">Loading ...</div>
+            <br />
         </div>
         )
     }
