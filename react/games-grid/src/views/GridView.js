@@ -11,13 +11,12 @@ class GridView extends Component {
             activeId: 1
         }
     }
-
     render() {
         const firstGame = this.props.games.slice(0, 1).map((game, i) => {
-            return <article key={i} className="first-game flex-item-2">
+            return <article key={i} className="first-game flex-item-4">
                         <Link to={"/" + game.name}>
-                            <img src={game.thumb} alt="game" width="100%"/>
-                            <h2>{game.name}</h2>
+                            <img src={game.thumb} alt="game" width="90%"/>
+                            <span>{game.name}</span>
                         </Link>
                     </article>
         });
@@ -26,7 +25,7 @@ class GridView extends Component {
             return <article key={i} className="small-games">
                         <Link to={"/" + game.name}>
                             <img src={game.thumb} alt="game" width="100%"/>
-                            <h4>{game.name}</h4>
+                            <span>{game.name}</span>
                         </Link>
                     </article>
         })
@@ -34,7 +33,7 @@ class GridView extends Component {
         return (
             <div className="wrapper container">
                 {firstGame}
-                <div className="flex-item-4">
+                <div className="flex-item-6">
                     {gamesView}
                 </div>
             </div>

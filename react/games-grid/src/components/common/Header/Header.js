@@ -8,7 +8,7 @@ class Header extends Component {
         return (
             <Fragment>
                 <header className="header">
-                    <span>HEADER</span>
+                    <span>React Game Grid</span>
                 </header>
             </Fragment>
         );

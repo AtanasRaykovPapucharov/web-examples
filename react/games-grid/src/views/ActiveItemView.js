@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from '../components/abstract/Spinner/Spinner';
+import './ActiveItemView.scss';
 
 class ActiveItemView extends Component {
     constructor() {

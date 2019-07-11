@@ -1,11 +1,41 @@
 .first-game {
-    margin: 1%;
-    height: 100%;
+    margin: 13px 1% 1% 1%;
+    text-align: center;
 }
 
 .small-games {
     display: inline-block;
-    width: 31.3%;
-    height: 50%;
-    margin: 1%;
+    width: 26%;
+    margin: 13px 3% 1% 3%;
+    text-align: center;
 }
+
+.first-game, .small-games {
+    img {
+        border: 2px solid rgb(74, 55, 55);
+        border-radius: 5%;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
+
+// @media (min-width: 200px) {
+//     .small-games {
+//         width: 31.3%;
+//     }
+// }
+
+// @media (min-width: 500px) {
+//     .small-games {
+//         width: 31.3%;
+//     }
+// }
+
+// @media (min-width: 768px) {
+//     .small-games {
+//         width: 31.3%;
+//     }
+// }

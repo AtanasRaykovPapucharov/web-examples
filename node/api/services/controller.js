@@ -117,7 +117,9 @@ module.exports = (collection, Model, params) => {
     },
     getAll: (req, resp) => {
       if(Model.getName() === 'Order') {
-        resp.status(404).redirect('/login')
+        if(!isAuth(req)) {
+          resp.status(404).redirect('/login')
+        }
       }
 
         if (!(req.query.pretty == '')) {
