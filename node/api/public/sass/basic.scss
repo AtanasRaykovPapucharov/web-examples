@@ -29,7 +29,31 @@
     @include flex(6);
 }
 
-@media (min-width:620px) {
+.flex-item-7 {
+    @include flex(7);
+}
+
+.flex-item-8 {
+    @include flex(8);
+}
+
+.flex-item-9 {
+    @include flex(9);
+}
+
+.flex-item-10 {
+    @include flex(10);
+}
+
+.flex-item-11 {
+    @include flex(11);
+}
+
+.flex-item-12 {
+    @include flex(12);
+}
+
+@media (min-width: 340px) {
     .container {
         @include flex-direction(row);
     }

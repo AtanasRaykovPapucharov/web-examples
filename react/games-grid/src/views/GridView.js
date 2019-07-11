@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './GridView.scss';
 
 class GridView extends Component {
@@ -14,28 +14,30 @@ class GridView extends Component {
 
     render() {
         const firstGame = this.props.games.slice(0, 1).map((game, i) => {
-            return <article className="first-game flex-item-2">
-                <img src={game.thumb} alt="game" width="100%"/>
-                <h2>{game.name}</h2>
-            </article>
+            return <article key={i} className="first-game flex-item-2">
+                        <Link to={"/" + game.name}>
+                            <img src={game.thumb} alt="game" width="100%"/>
+                            <h2>{game.name}</h2>
+                        </Link>
+                    </article>
         });
 
         const gamesView = this.props.games.slice(1).map((game, i) => {
             return <article key={i} className="small-games">
-                <img src={game.thumb} alt="game" width="100%"/>
-                <h4>{game.name}</h4>
-            </article>
+                        <Link to={"/" + game.name}>
+                            <img src={game.thumb} alt="game" width="100%"/>
+                            <h4>{game.name}</h4>
+                        </Link>
+                    </article>
         })
 
         return (
-            <BrowserRouter>
-                <div className="wrapper container">
-                    {firstGame}
-                    <div className="flex-item-4">
-                        {gamesView}
-                    </div>
+            <div className="wrapper container">
+                {firstGame}
+                <div className="flex-item-4">
+                    {gamesView}
                 </div>
-            </BrowserRouter>
+            </div>
         )
     }
 }
