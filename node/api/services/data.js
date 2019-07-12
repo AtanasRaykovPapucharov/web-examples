@@ -21,6 +21,13 @@ module.exports = (collection, requester) => {
                 throw new Error('Message date "geById" error: ' + error)
             }
         },
+        getByProp: (prop) => {
+            try {
+                return requester.getByProp(collection, prop)
+            } catch (error) {
+                throw new Error('Message date "geById" error: ' + error)
+            }
+        },
         post: (newMsg) => {
             try {
                 return requester.post(collection, newMsg)

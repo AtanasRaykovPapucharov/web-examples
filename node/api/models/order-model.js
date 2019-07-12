@@ -10,7 +10,7 @@ module.exports.init = mongoose => {
         const Schema = mongoose.Schema
 
         let order = new Schema({
-            id: {
+            _id: {
                 type: Number
             },
             date: {

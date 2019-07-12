@@ -7,15 +7,16 @@ const app = express()
 // App Constants
 const params = require('./config')[environment]
 
-// HTTP Server
-const http = require('http')
-const server = http.createServer(app)
-
 // Database
 const mongoose = require('mongoose')
 const mongoConnection = params.db
 const collections = params.collections
 const dbRequester = require('./services/db-requester')
+// const ngrok = require('ngrok')
+
+// (async () => {
+// 	await ngrok.connect(params.port)
+// })()
 
 // Express configuration
 require('./config/express')(app)
@@ -36,16 +37,12 @@ collections.forEach(element => {
 })
 
 // Main controller object
-const controller = {}
-
-collections.forEach(element => {
-	controller[element] = require('./services/controller')(db[element], db[`${element}Model`], params)
-})
+const controller = require('./controllers')(collections, db, params)
 
 // Routing
-require('./services/router')(app, controller, collections, params)
+require('./router')(app, controller, params)
 
 // Server listener
-server.listen(params.port, () => {
-	console.log(`Server is listening on port ${params.port}`)
+app.listen(params.port, () => {
+	console.log(`Server is listening on ${params.url}`)
 })

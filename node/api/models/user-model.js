@@ -10,6 +10,9 @@ module.exports.init = mongoose => {
         const Schema = mongoose.Schema
 
         const user = new Schema({
+            _id: {
+                type: Number
+            },
             username: {
                 type: String,
                 required: true
